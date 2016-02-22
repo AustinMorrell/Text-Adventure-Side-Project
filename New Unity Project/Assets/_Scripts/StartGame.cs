@@ -9,7 +9,13 @@ public class StartGame : MonoBehaviour
 
     public void OnClick()
     {
-        SceneManager.LoadScene("Scene1");
+        gameObject.GetComponent<AudioSource>().Play();
+        StartCoroutine(Example());
+        SceneManager.LoadScene("Cutsene_1");
     }
 
+    public IEnumerator Example()
+    {
+        yield return new WaitForSeconds(4);
+    }
 }
