@@ -15,6 +15,7 @@ public class Cutsene : MonoBehaviour {
         for (int i = 0; i < Pics.Length; i++)
         {
             Picture.GetComponent<Image>().sprite = Pics[i];
+            Input.GetKey("z");
         }
         SceneManager.LoadScene("1stStage");
 	}
