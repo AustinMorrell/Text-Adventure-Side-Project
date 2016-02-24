@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : Platform {
 
     [SerializeField]
     protected GameObject Fire;
@@ -21,6 +21,10 @@ public class Enemy : MonoBehaviour {
     private float m_BaseEHp;
     [ReadOnly, SerializeField]
     private float m_EnemyHp;
+    [SerializeField]
+    protected string m_Direction;
+    [SerializeField]
+    protected bool m_Reverse = false;
     public float BaseEHp { get { return m_BaseEHp; } set { m_BaseEHp = value; } }
     public float EnemyHp { get { return m_EnemyHp; } set { m_EnemyHp = value; } }
 
@@ -61,6 +65,89 @@ public class Enemy : MonoBehaviour {
                 DoIt = true;
                 count = 0;
             }
+        }
+    }
+
+    void FixedUpdate()
+    {
+        m_Velocity = new Vector3(0, 0, 0);
+        switch (m_Direction)
+        {
+            case "right":
+                if (!m_Reverse)
+                {
+                    MoveForward();
+                    if (m_Origin.x + m_Distance.x <= transform.position.x)
+                    {
+                        m_Reverse = true;
+                    }
+                }
+                if (m_Reverse)
+                {
+                    MoveBack();
+                    if (m_Origin.x >= transform.position.x)
+                    {
+                        m_Reverse = false;
+                    }
+                }
+                break;
+
+            case "left":
+                if (!m_Reverse)
+                {
+                    MoveBack();
+                    if (m_Origin.x - m_Distance.x >= transform.position.x)
+                    {
+                        m_Reverse = true;
+                    }
+                }
+                if (m_Reverse)
+                {
+                    MoveForward();
+                    if (m_Origin.x <= transform.position.x)
+                    {
+                        m_Reverse = false;
+                    }
+                }
+                break;
+
+            case "up":
+                if (!m_Reverse)
+                {
+                    MoveUp();
+                    if (m_Origin.y + m_Distance.y <= transform.position.y)
+                    {
+                        m_Reverse = true;
+                    }
+                }
+                if (m_Reverse)
+                {
+                    MoveDown();
+                    if (m_Origin.y >= transform.position.y)
+                    {
+                        m_Reverse = false;
+                    }
+                }
+                break;
+
+            case "down":
+                if (!m_Reverse)
+                {
+                    MoveDown();
+                    if (m_Origin.y - m_Distance.y >= transform.position.y)
+                    {
+                        m_Reverse = true;
+                    }
+                }
+                if (m_Reverse)
+                {
+                    MoveUp();
+                    if (m_Origin.y <= transform.position.y)
+                    {
+                        m_Reverse = false;
+                    }
+                }
+                break;
         }
     }
 }
