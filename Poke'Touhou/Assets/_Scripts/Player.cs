@@ -53,8 +53,9 @@ public class Player : MonoBehaviour {
         }
     if (Input.GetKey("space"))
         {
-           TempFire = Instantiate(Fire, gameObject.transform.position, Quaternion.identity) as GameObject;
-            TempFire.GetComponent<Rigidbody>().velocity = new Vector3(20 * Mathf.Cos(0), 20 * Mathf.Sin(0), 0);
+            TempFire = Instantiate(Fire, gameObject.transform.position, Quaternion.identity) as GameObject;
+            TempFire.GetComponent<Rigidbody>().velocity = new Vector3(0, 20, 0);
+           // TempFire.GetComponent<Rigidbody>().velocity = new Vector3(20 * Mathf.Cos(0), 20 * Mathf.Sin(0), 0);
         }
     }
 }
