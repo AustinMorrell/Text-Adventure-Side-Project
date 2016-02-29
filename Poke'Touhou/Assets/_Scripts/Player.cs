@@ -15,6 +15,14 @@ public class Player : MonoBehaviour {
     public float speed { get { return m_PlayerHp; } set { m_PlayerHp = value; } }
     public float BaseHp { get { return m_PlayerHp; } set { m_PlayerHp = value; } }
     public float PlayerHp { get { return m_PlayerHp; } set { m_PlayerHp = value; } }
+    [System.Serializable]
+    protected class Box
+    {
+        public float MinX, MinY, MaxX, MaxY;
+    }
+
+    [SerializeField]
+    protected Box m_ScreenBorders;
 
     // Use this for initialization
     void Start ()
@@ -55,7 +63,9 @@ public class Player : MonoBehaviour {
         {
             TempFire = Instantiate(Fire, gameObject.transform.position, Quaternion.identity) as GameObject;
             TempFire.GetComponent<Rigidbody>().velocity = new Vector3(0, 20, 0);
+            TempFire.transform.Rotate(new Vector3(0, 0, 90));
            // TempFire.GetComponent<Rigidbody>().velocity = new Vector3(20 * Mathf.Cos(0), 20 * Mathf.Sin(0), 0);
         }
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, m_ScreenBorders.MinX, m_ScreenBorders.MaxX), Mathf.Clamp(transform.position.y, m_ScreenBorders.MinY, m_ScreenBorders.MaxY), transform.position.z);
     }
 }

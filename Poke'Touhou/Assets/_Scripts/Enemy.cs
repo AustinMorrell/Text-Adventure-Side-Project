@@ -23,20 +23,22 @@ public class Enemy : Platform {
     private float m_EnemyHp;
     [SerializeField]
     protected string m_Direction;
-    [SerializeField]
+    [ReadOnly, SerializeField]
     protected bool m_Reverse = false;
     public float BaseEHp { get { return m_BaseEHp; } set { m_BaseEHp = value; } }
     public float EnemyHp { get { return m_EnemyHp; } set { m_EnemyHp = value; } }
 
-    protected void Start ()
+    protected override void Start ()
     {
+        base.Start();
         m_BaseEHp = 500;
         m_EnemyHp = m_BaseEHp;
         DoIt = false;
 	}
 	
-	protected void Update ()
+	protected override void Update ()
     {
+        base.Update();
         if (DoIt && (Player.PlayerHp > 0))
         {
             for (int i = 0; i < Amount; i++)
@@ -54,6 +56,7 @@ public class Enemy : Platform {
                 ATang += OffSet;
                 OffSet += Amount * (Mathf.PI/180);
                 TempFireball.GetComponent<Rigidbody>().velocity = new Vector3(Speed * Mathf.Cos(ATang), Speed * Mathf.Sin(ATang), 0);
+                TempFireball.transform.Rotate(new Vector3(0, 0, ATang * (180/Mathf.PI)));
             }
             DoIt = false;
         }
