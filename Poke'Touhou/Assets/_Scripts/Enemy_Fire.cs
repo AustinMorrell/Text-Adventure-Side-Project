@@ -15,7 +15,7 @@ public class Enemy_Fire : MonoBehaviour
     {
         if (other.name == "Player")
         {
-            Player.GetComponent<Player>().PlayerHp -= 5f;
+            Player.GetComponent<Player>().PlayerHp -= 1f;
             Destroy(gameObject);
         }
     }

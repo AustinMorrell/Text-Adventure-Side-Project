@@ -10,7 +10,7 @@ public class Enemy : Platform {
     [SerializeField]
     protected float WaitForFire;
     protected float count;
-    protected bool DoIt;
+    public bool DoIt;
     [SerializeField]
     protected float Speed;
     protected GameObject TempFireball;
