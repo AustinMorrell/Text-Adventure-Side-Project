@@ -17,7 +17,7 @@ public class Enemy : Platform {
     [SerializeField]
     protected int Amount;
     protected float OffSet;
-    [ReadOnly, SerializeField]
+    [SerializeField]
     private float m_BaseEHp;
     [ReadOnly, SerializeField]
     private float m_EnemyHp;
@@ -31,7 +31,6 @@ public class Enemy : Platform {
     protected override void Start ()
     {
         base.Start();
-        m_BaseEHp = 500;
         m_EnemyHp = m_BaseEHp;
         DoIt = false;
 	}
