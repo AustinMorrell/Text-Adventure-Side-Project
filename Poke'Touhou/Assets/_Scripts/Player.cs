@@ -49,26 +49,9 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-    if (Input.GetKey("up"))
-        {
-            Lerp(0, 1 * Time.deltaTime * m_speed, 0);
-        }
+        Lerp(Input.GetAxis("LeftJoystickX") * speed, -Input.GetAxis("LeftJoystickY") * speed, 0);
 
-    if (Input.GetKey("down"))
-        {
-            Lerp(0, -1 * Time.deltaTime * m_speed, 0);
-        }
-
-    if (Input.GetKey("left"))
-        {
-            Lerp(-1 * Time.deltaTime * m_speed, 0, 0);
-        }
-
-    if (Input.GetKey("right"))
-        {
-            Lerp(1 * Time.deltaTime * m_speed, 0, 0);
-        }
-    if (Input.GetKey("space"))
+    if (Input.GetButton("A"))
         {
             if (DoIt)
             {
