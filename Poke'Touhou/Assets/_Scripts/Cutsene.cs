@@ -37,7 +37,7 @@ public class Cutsene : MonoBehaviour {
             a = false;
             i++;
         }
-        else if (Input.GetKeyDown("z"))
+        else if (Input.GetButtonDown("A") || Input.GetKeyDown("z"))
         {
             Destroy(Temp);
             a = true;
