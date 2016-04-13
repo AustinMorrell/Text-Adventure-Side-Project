@@ -49,7 +49,6 @@
      <Compile Include="Assets\_Scripts\Attributes\EndHeaderAttribute.cs" />
      <Compile Include="Assets\_Scripts\Attributes\ReadOnlyAttribute.cs" />
      <Compile Include="Assets\_Scripts\Battle_Script.cs" />
-     <Compile Include="Assets\_Scripts\Count_down.cs" />
      <Compile Include="Assets\_Scripts\Cutsene.cs" />
      <Compile Include="Assets\_Scripts\DynamicObject.cs" />
      <Compile Include="Assets\_Scripts\Enemy.cs" />
@@ -61,6 +60,7 @@
      <Compile Include="Assets\_Scripts\Platform.cs" />
      <Compile Include="Assets\_Scripts\Player.cs" />
      <Compile Include="Assets\_Scripts\Player_Fire.cs" />
+     <Compile Include="Assets\_Scripts\PowerUp.cs" />
      <Compile Include="Assets\_Scripts\StartGame.cs" />
      <Compile Include="Assets\_Scripts\WaitForASec.cs" />
  <Reference Include="UnityEngine.UI">
