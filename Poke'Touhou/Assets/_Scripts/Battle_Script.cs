@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Battle_Script : MonoBehaviour {
 
@@ -42,7 +43,7 @@ public class Battle_Script : MonoBehaviour {
                 enemy.m_Attack = false;
                 Text clone2 = Instantiate(Win, new Vector3(0, 0, 0), Quaternion.identity) as Text;
                 clone2.transform.SetParent(Can.transform, false);
-                StartCoroutine(HoldFor(7));
+                StartCoroutine(WaitFor(7));
             }
         }
     }
@@ -50,5 +51,12 @@ public class Battle_Script : MonoBehaviour {
     IEnumerator HoldFor(float secs)
     {
         yield return new WaitForSeconds(secs);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    IEnumerator WaitFor(float secs)
+    {
+        yield return new WaitForSeconds(secs);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

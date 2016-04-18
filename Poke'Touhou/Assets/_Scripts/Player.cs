@@ -18,8 +18,11 @@ public class Player : MonoBehaviour {
     [ReadOnly, SerializeField]
     private int m_Mode;
     [SerializeField]
+    private int m_maxPower;
+    [SerializeField]
     protected GameObject Fire;
     protected GameObject TempFire;
+    public int maxPower { get { return m_maxPower; } set { m_maxPower = value; } }
     public int Mode { get { return m_Mode; } set { m_Mode = value; } }
     public float power { get { return m_PlayerPower; } set { m_PlayerPower = value; } }
     public float speed { get { return m_speed; } set { m_speed = value; } }
@@ -63,7 +66,7 @@ public class Player : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-        if (m_PlayerPower > 999)
+        if (m_PlayerPower > m_maxPower)
         {
             m_Mode = 2;
             gameObject.GetComponent<SpriteRenderer>().sprite = m_Mega;
