@@ -50,6 +50,7 @@
      <Compile Include="Assets\_Scripts\Attributes\ReadOnlyAttribute.cs" />
      <Compile Include="Assets\_Scripts\Background_Script.cs" />
      <Compile Include="Assets\_Scripts\Battle_Script.cs" />
+     <Compile Include="Assets\_Scripts\CelebiAttck.cs" />
      <Compile Include="Assets\_Scripts\Cutsene.cs" />
      <Compile Include="Assets\_Scripts\DynamicObject.cs" />
      <Compile Include="Assets\_Scripts\Enemy.cs" />
