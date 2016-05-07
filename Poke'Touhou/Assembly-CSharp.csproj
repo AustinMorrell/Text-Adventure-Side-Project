@@ -48,8 +48,9 @@
      <Compile Include="Assets\_Scripts\Actor.cs" />
      <Compile Include="Assets\_Scripts\Attributes\EndHeaderAttribute.cs" />
      <Compile Include="Assets\_Scripts\Attributes\ReadOnlyAttribute.cs" />
+     <Compile Include="Assets\_Scripts\Background_Script.cs" />
      <Compile Include="Assets\_Scripts\Battle_Script.cs" />
-     <Compile Include="Assets\_Scripts\Count_down.cs" />
+     <Compile Include="Assets\_Scripts\CelebiAttck.cs" />
      <Compile Include="Assets\_Scripts\Cutsene.cs" />
      <Compile Include="Assets\_Scripts\DynamicObject.cs" />
      <Compile Include="Assets\_Scripts\Enemy.cs" />
@@ -57,10 +58,12 @@
      <Compile Include="Assets\_Scripts\Enemy_Fire.cs" />
      <Compile Include="Assets\_Scripts\Exit.cs" />
      <Compile Include="Assets\_Scripts\HPBar.cs" />
+     <Compile Include="Assets\_Scripts\MegaEvolve.cs" />
      <Compile Include="Assets\_Scripts\MyCamera.cs" />
      <Compile Include="Assets\_Scripts\Platform.cs" />
      <Compile Include="Assets\_Scripts\Player.cs" />
      <Compile Include="Assets\_Scripts\Player_Fire.cs" />
+     <Compile Include="Assets\_Scripts\PowerUp.cs" />
      <Compile Include="Assets\_Scripts\StartGame.cs" />
      <Compile Include="Assets\_Scripts\WaitForASec.cs" />
  <Reference Include="UnityEngine.UI">

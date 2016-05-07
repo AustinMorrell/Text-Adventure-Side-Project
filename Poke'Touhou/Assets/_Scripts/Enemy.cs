@@ -4,6 +4,8 @@ using System.Collections;
 public class Enemy : Platform {
 
     [SerializeField]
+    private GameObject explosion;
+    [SerializeField]
     protected GameObject Fire;
     [SerializeField]
     protected Player Player;
@@ -70,6 +72,12 @@ public class Enemy : Platform {
                     DoIt = true;
                     count = 0;
                 }
+            }
+
+            if (m_EnemyHp <= 0)
+            {
+                Instantiate(explosion, transform.position, transform.rotation);
+                Destroy(gameObject);
             }
         }
     }

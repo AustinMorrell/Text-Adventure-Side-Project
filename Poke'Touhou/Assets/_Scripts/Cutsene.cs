@@ -29,7 +29,7 @@ public class Cutsene : MonoBehaviour {
         {
             if (i == Pics.Length)
             {
-                SceneManager.LoadScene("1stStage");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             Picture.GetComponent<Image>().sprite = Pics[i];
             Temp = Instantiate(Statement[i]);
